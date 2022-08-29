@@ -71,6 +71,55 @@ img{
     margin-bottom: 50px;
     text-align: center;
 }
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden {
+    visibility: inherit;
+    opacity: 0;
+    pointer-events: none;
+}
+.modal{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 528px;
+    height: 581px;
+    padding: 8px;
+    
+    background: #FFFFFF;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+                0px 1px 1px rgba(0, 0, 0, 0.14),
+                0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+.closebutton{
+    display: flex;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.closebutton-icon{
+    width: 18px;
+    height: 18px;
+}
 
 .logoweb{
     font-family: 'Raleway';
@@ -106,7 +155,9 @@ margin-left: 93px;
     color: var(--titletext-color);
     padding-top: 32px;
     padding-bottom: 32px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .navigation-link:hover,
 .navigation-link:focus{
     color: var(--hover-color);
@@ -172,6 +223,8 @@ margin-left: 93px;
     padding-bottom: 32px;
     display: flex;
     align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-container{
     display: flex;
@@ -354,6 +407,8 @@ margin-left: 93px;
     border-radius: 50px;
     cursor: pointer;
     color: #AFB1B8;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .specialistlink:hover,
@@ -384,6 +439,10 @@ margin-left: 93px;
 width: 370px;
 margin-left: 30px;
 margin-bottom: 30px;
+
+}
+.example-hover{
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .example-hover:hover,
 .example-hover:focus{
@@ -392,9 +451,7 @@ margin-bottom: 30px;
                 0px 4px 4px rgba(0, 0, 0, 0.06), 
                 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.example-hover:hover .examplecard-text{
-    transform: translateY(0)
-}
+
 .example:nth-child(3n+1){
 margin-left: 0;
 }
@@ -427,7 +484,9 @@ margin-left: 0;
 
     transform: translateY(101%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
+}
+.example-hover:hover .examplecard-text {
+    transform: translateY(0)
 }
 .filterbuttons{
     display: flex;
@@ -451,7 +510,9 @@ margin-left: 0;
     border-radius: 4px;
     border: 0;
     padding: 6px 22px;
-    
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filterbutton:hover,
 .filterbutton:focus{
@@ -477,6 +538,8 @@ margin-left: 0;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-button:hover{
     border: 1px solid var(--hover-color);
@@ -510,10 +573,11 @@ margin-left: 0;
     width: 44px;
     height: 44px;
     padding: 12px;
-    background: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 50px;
     fill: var(--textwhite-color);
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-icon:not(:first-child) {
     margin-left: 10px
@@ -561,6 +625,7 @@ display: block;
     letter-spacing: 0.03em;
     color: var(--p-color);
     display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contactlist-item:not(:first-child) {
     margin-top: 9px;
@@ -572,6 +637,7 @@ display: block;
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: var(--textwhite-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .allworks-titles{
